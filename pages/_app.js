@@ -9,7 +9,7 @@ function LandingPage({ Component, pageProps }) {
         <ChakraProvider theme={theme}>
 
             <Flex alignItems='center' gap={'2'} pl={18}>
-                <Image alt="Logo" src={'/Logo.png'} width={132} height={52}/>
+                <a href = {"/"}><Image alt="Logo" src={'/Logo.png'} width={132} height={52}/></a>
                 <Spacer/>
                 <ButtonGroup gap={13.86} pr={61.86} pt={35} alignItems={'center'}>
                    <Button  as={"a"} href={"/InfoPage"} variant={'ghost'}><InfoIcon w={30} h={30}/></Button>
@@ -23,7 +23,6 @@ function LandingPage({ Component, pageProps }) {
             </Text>
         </HStack>
         </Box>
-  );
         </ChakraProvider>
 
     )

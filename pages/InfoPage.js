@@ -11,8 +11,8 @@ const Card = () =>
             </Heading>
             <Text m="5" mt="15">
                     There are three major steps for using smile!
-                    First component consists of smiling for at least 10 seconds
-                <Button colorScheme={'orange'} variant={'link'}><a href={'https://www.tandfonline.com/doi/full/10.1080/17437199.2022.2052740'}>. Studies</a></Button> show that even forced smiling for
+                    First component consists of smiling for at least 10 seconds.&nbsp;
+                <Button colorScheme={'orange'} variant={'link'}><a href={'https://www.tandfonline.com/doi/full/10.1080/17437199.2022.2052740'}>Studies</a></Button> show that even forced smiling for
                     a short period of time can help reduce stress, benefiting both your physical and mental health!<br/>
             </Text>
             <Text m="5" mt="15">
