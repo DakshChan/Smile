@@ -1,7 +1,10 @@
 import * as faceapi from 'face-api.js';
 import React from 'react';
+import { Heading, Container, ScaleFade, Input, Button, OrderedList, ListItem, Alert, AlertDescription, AlertIcon,AlertTitle } from "@chakra-ui/react";
+import { useRouter } from 'next/router';
 
 export default function Face() {
+    const router = useRouter();
 
     const [modelsLoaded, setModelsLoaded] = React.useState(false);
     const [captureVideo, setCaptureVideo] = React.useState(false);
@@ -51,6 +54,14 @@ export default function Face() {
                 faceapi.matchDimensions(canvasRef.current, displaySize);
 
                 const detections = await faceapi.detectAllFaces(videoRef.current, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions();
+                //console.log(detections);
+                if (detections.length > 0 && detections[0].expressions.happy > 0.5) {
+                    console.log("happy");
+                    await router.push("/Affirmation");
+                } else if (detections.length > 0 && detections[0].expressions.sad > 0.5) {
+                    console.log("sad");
+                    alert("Try smile :)")
+                }
 
                 const resizedDetections = faceapi.resizeResults(detections, displaySize);
 
@@ -58,6 +69,7 @@ export default function Face() {
                 canvasRef && canvasRef.current && faceapi.draw.drawDetections(canvasRef.current, resizedDetections);
                 canvasRef && canvasRef.current && faceapi.draw.drawFaceLandmarks(canvasRef.current, resizedDetections);
                 canvasRef && canvasRef.current && faceapi.draw.drawFaceExpressions(canvasRef.current, resizedDetections);
+
             }
         }, 100)
     }
@@ -73,11 +85,11 @@ export default function Face() {
             <div style={{ textAlign: 'center', padding: '10px' }}>
                 {
                     captureVideo && modelsLoaded ?
-                        <button onClick={closeWebcam} style={{ cursor: 'pointer', backgroundColor: 'green', color: 'white', padding: '15px', fontSize: '25px', border: 'none', borderRadius: '10px' }}>
+                        <button onClick={closeWebcam} style={{ cursor: 'pointer', backgroundColor: '#f88859', color: 'white', padding: '15px', fontSize: '25px', border: 'none', borderRadius: '10px' }}>
                             Close Webcam
                         </button>
                         :
-                        <button onClick={startVideo} style={{ cursor: 'pointer', backgroundColor: 'green', color: 'white', padding: '15px', fontSize: '25px', border: 'none', borderRadius: '10px' }}>
+                        <button onClick={startVideo} style={{ cursor: 'pointer', backgroundColor: '#f88859', color: 'white', padding: '15px', fontSize: '25px', border: 'none', borderRadius: '10px' }}>
                             Open Webcam
                         </button>
                 }

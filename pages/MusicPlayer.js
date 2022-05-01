@@ -35,7 +35,7 @@ export default function MusicPlayer(){
                  </HStack>
 
                  <div ><Image src={"/Btn.png"} width={400} height={400} style={{cursor: "grab"}} as={"a"} onClick={ourEffect}></Image></div>
-                 <div><Button colorScheme={'orange'} alignItems={}>Cancel</Button></div>
+                 <div><Button colorScheme={'orange'}>Cancel</Button></div>
              </Stack>
 
          </Center>
