@@ -4,8 +4,8 @@ import {Box, Center, Heading, Text} from "@chakra-ui/react";
 const Card = () =>
     {
         return(
-    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" boxShadow={"2xl"} width={736} height={895}>
-        <Box m="5">
+    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" boxShadow={"2xl"} m="75" alignContent={'center'}>
+        <Box m="15">
             <Heading m="5" mb="0" as="h4" size="md" mt="10">
                 How do you use Smile?
             </Heading>
