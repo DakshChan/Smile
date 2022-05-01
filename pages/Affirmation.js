@@ -1,5 +1,5 @@
 
-import { Heading, Text, Container, ScaleFade, Input, Button } from "@chakra-ui/react";
+import { Heading, Container, ScaleFade, Input, Button, OrderedList, ListItem, Alert, AlertDescription, AlertIcon,AlertTitle } from "@chakra-ui/react";
 import { useState } from 'react';
 
 
@@ -20,6 +20,7 @@ export default function Affirmation(){
 
     const [curComplimentState, setCurCompliment] = useState(0);
     const [shouldAnimate, changeAnimate] = useState(true);
+    const [complimentStatus, setComplimentStatus] = useState(0);
 
     const [curCompliment, setCurComplimentInput] = useState("");
 
@@ -27,7 +28,6 @@ export default function Affirmation(){
 
     const onClick = async (e) => {
         changeAnimate(false)
-        console.log(curCompliment);
         const response  = await fetch("https://api.monkeylearn.com/v3/classifiers/cl_pi3C7JiL/classify/",{
             method: "POST",
             mode: 'cors',
@@ -42,16 +42,20 @@ export default function Affirmation(){
             })
         })
         const result = await response.json();
-        console.log(result);
+
         const { tag_name: tag, confidence } = result[0]["classifications"][0];
-        console.log(tag, confidence);
         if (tag === "Negative"){
             // No negative comments, be positive!
+            setComplimentStatus(2);
+            
         }else if (tag == "Neutral" || confidence < 0.6){
             // You can do better!
+            setComplimentStatus(1);
         }else {
             setCompliments((compliments) => [...compliments, curCompliment])
             setCurCompliment((val) => val + 1)
+            setCurComplimentInput("")
+            setComplimentStatus(0);
         }
         changeAnimate(true)
     }
@@ -61,12 +65,22 @@ export default function Affirmation(){
 
 
     return <Container pt={'200px'}>
+                {
+            complimentStatus != 0 && (<Alert status={complimentStatus == 1 ? "warning" : "error"}>
+            <AlertIcon />
+            <AlertTitle>{complimentStatus == 1 ? "You can do better! Come on!": "Oi!"}</AlertTitle>
+            <AlertDescription>{complimentStatus == 1 ? "You're on the right track, more positivity needed!": "No negativity please!"}</AlertDescription>
+          </Alert>)
+        }
         <ScaleFade in={shouldAnimate} initialScale={0.01}>
         <Heading  color={"#EE7E56"}>{wowText[curComplimentState]}</Heading><br/>
         <Heading>{text[curComplimentState]}</Heading>
         <Input value={curCompliment} onChange={(e) => setCurComplimentInput(e.target.value)} mt="20px" placeholder="Write a compliment here... (Max 65 characters)"/>
         <Button mt="20px" colorScheme={"orange"} onClick={onClick}>Submit</Button>
-        {compliments.map((compliment, index) => <Heading key ={index}>{compliment}</Heading>)}
+        <OrderedList fontSize={"50px"}>
+            {compliments.map((compliment, index) => <ListItem key ={index}>{compliment}</ListItem>)}
+        </OrderedList>
         </ScaleFade>
+        
     </Container>
 }
