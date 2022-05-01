@@ -8,31 +8,23 @@ import {
 import Image from "next/image";
 export default function Home() {
 
-    const handleInfoOnclick = () => {}
-
-    const handleSettingsOnclick = () => {}
     return <Center>
         <div>
             <Stack>
-                {/*Nav Bar, NEED A WAY TO PAD BOTH SIDES INWARDS*/}
-
-                {/*Image plus our statement*/}
                 <div>
 
-                    <HStack spacing={'94px'} pl={56}>
+                    <HStack spacing={'90px'}>
 
                         <div>
-                            {/*set to fill image for 30% of view*/}
-                            <Image src={"/landingpageimage.svg"} width={487} height={293}/>
+                            <Image alt="logo" src={"/landingpageimage.svg"} width={487} height={293}/>
                         </div>
 
                         <div>
-                            {/*Find how to center this content stack vertically on the page*/}
                             <Stack>
                                 <Text fontSize={'60px'} color={'orange.500'} fontWeight={'700'}>Smile</Text>
-                                <Text fontSize={'60px'} fontWeight={'700'}>Because of some call to action message here.</Text>
+                                <Text fontSize={'20px'} fontWeight={'500'}>A web app designed to make you smile!</Text>
                                 <HStack>
-                                    <Button colorScheme={"orange"}>Start Now</Button>
+                                    <Button colorScheme={"orange"}>Start a Smile Mile</Button>
                                     <Button variant={'outline'} colorScheme={'orange'}>Learn More</Button>
                                 </HStack>
                             </Stack>
