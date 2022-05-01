@@ -1,6 +1,6 @@
 import {ButtonGroup, ChakraProvider, Flex, Spacer} from '@chakra-ui/react'
 import theme from "../theme";
-import {InfoIcon, SettingsIcon} from "@chakra-ui/icons";
+import {InfoIcon} from "@chakra-ui/icons";
 import Image from "next/image";
 
 function LandingPage({ Component, pageProps }) {
@@ -13,7 +13,6 @@ function LandingPage({ Component, pageProps }) {
                 <Spacer/>
                 <ButtonGroup gap={13.86} pr={61.86} pt={35}>
                     <InfoIcon  w={30} h={30}/>
-                    <SettingsIcon w={30} h={30}/>
                 </ButtonGroup>
             </Flex>
             <Component {...pageProps}/>
