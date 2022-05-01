@@ -27,6 +27,7 @@ const Card = () =>
                     and other resources.
             </Text>
         </Box>
+        <Center><Button colorScheme={'orange'} as={"a"} href={"/MusicPlayer"} mb={"15px"}>Next</Button></Center>
     </Box>)
 };
 
