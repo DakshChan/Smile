@@ -23,7 +23,6 @@ function LandingPage({ Component, pageProps }) {
             </Text>
         </HStack>
         </Box>
-  );
         </ChakraProvider>
 
     )
