@@ -17,7 +17,7 @@ const Card = () =>
             </Text>
             <Text m="5" mt="15">
                     The second component consists of positive affirmations.
-                    Arquiza <Button colorScheme={'orange'} variant={'link'}><a href={'https://www.tandfonline.com/doi/full/10.1080/17437199.2022.2052740'}>asserts</a></Button> that positive
+                    Arquiza <Button colorScheme={'orange'} variant={'link'}><a href={'https://scholar.dominican.edu/scw/SCW2020/conference-presentations/63/\n'}>asserts</a></Button> that positive
                     affirmations can improve one's self esteem and overall happiness.
                     Thus, given three affirmations, we use sentimental analysis to determine whether the affirmations
                     are positive or not!
