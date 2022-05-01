@@ -1,19 +1,10 @@
-import Head from 'next/head'
 import {
     Button,
-    ButtonGroup,
     Center,
-    ChakraProvider,
-    extendTheme,
-    Flex,
     HStack,
-    Spacer,
     Stack,
     Text
 } from '@chakra-ui/react'
-import {InfoIcon, SettingsIcon} from "@chakra-ui/icons";
-import theme from '../theme'
-import LandingPage from "./_app";
 import Image from "next/image";
 export default function Home() {
 

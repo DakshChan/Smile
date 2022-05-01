@@ -1,22 +1,20 @@
-import Card from '../Components/AffirmationsCard/Card';
-import {Button, ButtonGroup, Flex, Spacer, Center, Box} from "@chakra-ui/react";
-import {InfoIcon, SettingsIcon} from "@chakra-ui/icons";
 
-export default function Affirmation(){
-    return (
-   <Center>
-       <Box position={'relative'}>
-           <Box
-               position="absolute"
-               top="50%"
-               left="50%"
-               transform="translateY(-50%, -50%)"
-               boxShadow={'2xl'}
-           >
-               <Card/>
-           </Box>
-       </Box>
+import { Center, Box, Heading, Text } from "@chakra-ui/react";
 
-   </Center>
-    )
+
+const Card = () =>  ( <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" boxShadow={"2xl"}>
+      <Box m="5">
+        <Heading m="5" mb="0" as="h4" size="md">
+          List a positive affirmation!
+        </Heading>
+        <Text m="5" mt="0">
+          My cool blog post
+        </Text>
+      </Box>
+    </Box>);
+export default function affirmation(){
+
+    return <Center h='500'>
+        <Card />
+    </Center>
 }
