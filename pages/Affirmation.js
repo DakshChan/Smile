@@ -1,6 +1,7 @@
 
 import { Heading, Container, ScaleFade, Input, Button, OrderedList, ListItem, Alert, AlertDescription, AlertIcon,AlertTitle } from "@chakra-ui/react";
 import { useState } from 'react';
+import Router from 'next/router'
 
 
 const wowText = [
@@ -58,6 +59,10 @@ export default function Affirmation(){
             setComplimentStatus(0);
         }
         changeAnimate(true)
+
+        if (compliments.length === 2){
+            Router.push("/InfoPage");
+        }
     }
 
 
