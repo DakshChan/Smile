@@ -1,4 +1,4 @@
-import {ButtonGroup, ChakraProvider, Flex, Spacer} from '@chakra-ui/react'
+import {ButtonGroup, ChakraProvider, Flex, Spacer, Box, HStack, Text} from '@chakra-ui/react'
 import theme from "../theme";
 import {InfoIcon} from "@chakra-ui/icons";
 import Image from "next/image";
@@ -16,6 +16,14 @@ function LandingPage({ Component, pageProps }) {
                 </ButtonGroup>
             </Flex>
             <Component {...pageProps}/>
+            <Box as="footer" mt={12} height="100%" textAlign="center" className="app">
+        <HStack justify="center">
+            <Text fontSize="sm">
+            Made with ❤️ by Daksh, Hammad, Brian, Ritvik
+            </Text>
+        </HStack>
+        </Box>
+  );
         </ChakraProvider>
 
     )
