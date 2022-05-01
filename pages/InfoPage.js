@@ -1,4 +1,4 @@
-import {Box, Center, Heading, Text} from "@chakra-ui/react";
+import {Box, Button, Center, Heading, Text} from "@chakra-ui/react";
 
 
 const Card = () =>
@@ -11,15 +11,14 @@ const Card = () =>
             </Heading>
             <Text m="5" mt="15">
                     There are three major steps for using smile!
-                    First component consists of smiling for at least 10 seconds.
-                    Studies show that <a href={'https://www.tandfonline.com/doi/full/10.1080/17437199.2022.2052740'}>even forced smiling for
-                    a short period of time can help reduce stress, benefiting both your physical and mental health! </a> <br/>
+                    First component consists of smiling for at least 10 seconds
+                <Button colorScheme={'orange'} variant={'link'}><a href={'https://www.tandfonline.com/doi/full/10.1080/17437199.2022.2052740'}>. Studies</a></Button> show that even forced smiling for
+                    a short period of time can help reduce stress, benefiting both your physical and mental health!<br/>
             </Text>
             <Text m="5" mt="15">
                     The second component consists of positive affirmations.
-                    Arquiza asserts that
-                    <a href={'https://scholar.dominican.edu/scw/SCW2020/conference-presentations/63/'}> positive
-                        affirmations can improve one's self esteem and overall happiness. </a>
+                    Arquiza <Button colorScheme={'orange'} variant={'link'}><a href={'https://www.tandfonline.com/doi/full/10.1080/17437199.2022.2052740'}>asserts</a></Button> that positive
+                    affirmations can improve one's self esteem and overall happiness.
                     Thus, given three affirmations, we use sentimental analysis to determine whether the affirmations
                     are positive or not!
                 </Text>
