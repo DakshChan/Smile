@@ -24,8 +24,7 @@ export default function Home() {
                                 <Text fontSize={'60px'} color={'orange.500'} fontWeight={'700'}>Smile</Text>
                                 <Text fontSize={'20px'} fontWeight={'500'}>A web app designed to make you smile!</Text>
                                 <HStack>
-                                    <Button colorScheme={"orange"}>Start a Smile Mile</Button>
-                                    <Button variant={'outline'} colorScheme={'orange'} as="a" href="/InfoPage">Learn More</Button>
+                                    <Button colorScheme={"orange"} as="a" href="/InfoPage">Start a Smile Mile</Button>
                                 </HStack>
                             </Stack>
                         </div>
